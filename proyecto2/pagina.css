@@ -1,0 +1,117 @@
+﻿body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: rgb(218, 216, 216);
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #000;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+nav {
+    background-color: #555;
+    color: #fff;
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    width: 220px;
+    min-width: 180px;
+    align-self: flex-start;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.layout {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: flex-start;
+    flex: 1;
+}
+
+main,
+section,
+article {
+    flex: 1 1 220px;
+    max-width: 260px;
+    min-width: 220px;
+    padding: 40px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #fff;
+    
+}
+
+main {
+    background-color: #fff;
+}
+
+section {
+    background-color: #f0f0f0;
+    border-color: #666;
+}
+
+article {
+    background-color: #e0e0e0;
+    border-color: #666;
+}
+
+li {
+    display: block;
+    margin: 0;
+}
+
+li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+li a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #000;
+    border-radius: 5px;
+    margin-top: 460px;
+}
+
+/* Estilo específico para el botón de cerrar sesión */
+.logout-btn {
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+.logout-btn:hover {
+    background-color: red;
+    color: #fff;
+}
