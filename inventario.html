@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario | SGRSI</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="tema.css">
+    <link rel="stylesheet" href="componentes.css">
+    <link rel="stylesheet" href="layout.css">
+    <script src="navegacion.js" defer></script>
+    <script src="autenticacion.js" defer></script>
+    <script src="inventario.js" defer></script>
+    <script src="tema.js" defer></script>
+</head>
+<body>
+    <!-- PÁGINA DE INVENTARIO -->
+    <button class="dark-btn" onclick="toggleDark()">◑</button>
+
+    <div class="card">
+        <h1>Inventario</h1>
+        <input type="text" id="producto" placeholder="Nombre del producto" required>
+        <input type="number" id="cantidad" placeholder="Cantidad" min="1" required>
+        <input type="text" id="descripcion" placeholder="Descripción (opcional)" maxlength="100">
+        <p id="errorInventario" style="color:red;"></p>
+        <button onclick="agregarProducto()">Agregar producto</button>
+        <button onclick="mostrarSistema()">Volver al sistema</button>
+    </div>
+</body>
+</html>

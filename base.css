@@ -1,0 +1,61 @@
+/* =====================
+   ESTILOS GENERALES
+   ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
+    text-align: center;
+    padding: 40px;
+    transition: 0.3s;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+p {
+    margin: 10px 0;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: Arial, sans-serif;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #0095f6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-family: Arial, sans-serif;
+}
+
+button:hover {
+    background: #0077c8;
+}
+
+button:not(.dark-btn) {
+    margin: 5px 0;
+}
+
+a {
+    color: #0095f6;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #0077c8;
+}

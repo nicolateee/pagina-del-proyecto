@@ -1,0 +1,33 @@
+/* =====================
+   ESTILOS DE TARJETAS, FORMULARIOS Y ERRORES
+   ===================== */
+.card {
+    background: white;
+    width: 320px;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.card h1 {
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+#errorLogin,
+#errorRegistro,
+#errorInventario,
+#errorServicio,
+#errorIncidencia {
+    font-size: 14px;
+    margin: 5px;
+    color: red;
+}
+
+.login-container {
+    display: block;
+}

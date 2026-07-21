@@ -1,0 +1,105 @@
+/* =====================
+   ESTILOS DEL MODO OSCURO Y BOTONES
+   ===================== */
+body.dark {
+    background: #121212;
+    color: white;
+}
+
+body.dark .card {
+    background: #1e1e1e;
+    color: white;
+}
+
+body.dark input {
+    background: #2b2b2b;
+    color: white;
+    border: 1px solid #555;
+}
+
+body.dark button {
+    background: #333;
+    color: white;
+}
+
+body.dark button:hover {
+    background: #555;
+}
+
+body.dark .dark-btn {
+    background: #333;
+    color: white;
+}
+
+body.dark header {
+    background: #1e1e1e;
+}
+
+body.dark nav {
+    background: #2b2b2b;
+}
+
+body.dark footer {
+    background: #1e1e1e;
+}
+
+body.dark main,
+body.dark section,
+body.dark article {
+    background: #2b2b2b;
+    color: white;
+    border-color: #444;
+}
+
+.dark-btn {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 18px;
+    background: white;
+    color: black;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.home-btn,
+.back-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    background: white;
+    color: black;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.home-btn:hover,
+.back-btn:hover {
+    background: #f0f0f0;
+}
+
+body.dark .home-btn,
+body.dark .back-btn {
+    background: #333;
+    color: white;
+}
+
+body.dark .home-btn:hover,
+body.dark .back-btn:hover {
+    background: #555;
+}

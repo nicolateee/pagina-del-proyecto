@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SGRSI | ITI</title>
+    <title>Registro | SGRSI</title>
     <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="tema.css">
     <link rel="stylesheet" href="componentes.css">
@@ -13,17 +13,17 @@
     <script src="tema.js" defer></script>
 </head>
 <body>
-    <!-- PÁGINA DE LOGIN -->
+    <!-- PÁGINA DE REGISTRO -->
     <button class="dark-btn" onclick="toggleDark()">◑</button>
 
     <div class="login-container">
         <div class="card">
-            <h1>Iniciar Sesión</h1>
-            <input type="email" id="correo" placeholder="Correo" required>
-            <input type="password" id="clave" placeholder="Contraseña" required>
-            <p id="errorLogin" style="color:red;"></p>
-            <button onclick="login()">Ingresar</button>
-            <p>¿No tienes cuenta? <a onclick="mostrarRegistro()">Regístrate</a></p>
+            <h1>Crear Cuenta</h1>
+            <input type="email" id="nuevoCorreo" placeholder="Correo" required>
+            <input type="password" id="nuevaClave" placeholder="Contraseña" required minlength="8">
+            <p id="errorRegistro" style="color:red;"></p>
+            <button onclick="registro()">Crear cuenta</button>
+            <p>¿Ya tienes cuenta? <a onclick="mostrarLogin()">Inicia sesión</a></p>
         </div>
     </div>
 </body>

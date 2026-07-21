@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicio | SGRSI</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="tema.css">
+    <link rel="stylesheet" href="componentes.css">
+    <link rel="stylesheet" href="layout.css">
+    <script src="navegacion.js" defer></script>
+    <script src="autenticacion.js" defer></script>
+    <script src="servicio.js" defer></script>
+    <script src="tema.js" defer></script>
+</head>
+<body>
+    <!-- PÁGINA DE SERVICIO -->
+    <button class="dark-btn" onclick="toggleDark()">◑</button>
+
+    <div class="card">
+        <h1>Solicitud de Servicio</h1>
+        <input type="text" id="tipoServicio" placeholder="Tipo de servicio" required>
+        <input type="text" id="descripcionServicio" placeholder="Descripción del servicio" required>
+        <select id="prioridad" required>
+            <option value="">Seleccione prioridad</option>
+            <option value="alta">Alta</option>
+            <option value="media">Media</option>
+            <option value="baja">Baja</option>
+        </select>
+        <p id="errorServicio" style="color:red;"></p>
+        <button onclick="enviarSolicitud()">Enviar solicitud</button>
+        <button onclick="mostrarSistema()">Volver al sistema</button>
+    </div>
+</body>
+</html>

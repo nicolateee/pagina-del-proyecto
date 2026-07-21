@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incidencias | SGRSI</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="tema.css">
+    <link rel="stylesheet" href="componentes.css">
+    <link rel="stylesheet" href="layout.css">
+    <script src="navegacion.js" defer></script>
+    <script src="autenticacion.js" defer></script>
+    <script src="incidencias.js" defer></script>
+    <script src="tema.js" defer></script>
+</head>
+<body>
+    <!-- PÁGINA DE INCIDENCIAS -->
+    <button class="dark-btn" onclick="toggleDark()">◑</button>
+
+    <div class="card">
+        <h1>Registro de Incidencias</h1>
+        <input type="text" id="titulo" placeholder="Título de la incidencia" required>
+        <input type="text" id="descripcionIncidencia" placeholder="Descripción del problema" required>
+        <input type="text" id="area" placeholder="Área o departamento" required>
+        <p id="errorIncidencia" style="color:red;"></p>
+        <button onclick="guardarIncidencia()">Guardar incidencia</button>
+        <button onclick="mostrarSistema()">Volver al sistema</button>
+    </div>
+</body>
+</html>
