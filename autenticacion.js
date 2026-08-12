@@ -34,7 +34,7 @@ function login() {
         return;
     }
 
-    localStorage.setItem("usuarioActivo", correo);
+    localStorage.setItem("usuarioActivo", JSON.stringify({ correo, clave }));
     alert("Sesión iniciada correctamente");
     limpiarCampo("correo");
     limpiarCampo("clave");
