@@ -13,12 +13,11 @@
     <script src="tema.js" defer></script>
 </head>
 <body>
-    <!-- PÁGINA DE REGISTRO -->
     <button class="dark-btn" onclick="toggleDark()">◑</button>
-
     <div class="login-container">
         <div class="card">
             <h1>Crear Cuenta</h1>
+            <input type="text" id="nuevoNombre" placeholder="Nombre completo" required>
             <input type="email" id="nuevoCorreo" placeholder="Correo" required>
             <input type="password" id="nuevaClave" placeholder="Contraseña" required minlength="8">
             <p id="errorRegistro" style="color:red;"></p>

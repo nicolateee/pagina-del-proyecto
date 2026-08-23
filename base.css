@@ -59,3 +59,9 @@ a {
 a:hover {
     color: #0077c8;
 }
+
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+}

@@ -14,17 +14,63 @@
     <script src="tema.js" defer></script>
 </head>
 <body>
-    <!-- PÁGINA DE INVENTARIO -->
     <button class="dark-btn" onclick="toggleDark()">◑</button>
+    <button class="back-btn" onclick="mostrarSistema()">←</button>
 
-    <div class="card">
-        <h1>Inventario</h1>
-        <input type="text" id="producto" placeholder="Nombre del producto" required>
-        <input type="number" id="cantidad" placeholder="Cantidad" min="1" required>
-        <input type="text" id="descripcion" placeholder="Descripción (opcional)" maxlength="100">
+    <!-- Formulario para agregar/editar (solo admin) -->
+    <div id="formInventario" class="card" style="display:none; max-width:500px;">
+        <h1 id="tituloFormInventario">Agregar Equipo</h1>
+        <input type="hidden" id="idEditando" value="">
+        <input type="text" id="nombre" placeholder="Nombre del equipo" required>
+        <select id="tipo">
+            <option value="">Seleccione tipo</option>
+            <option value="Computadora">Computadora</option>
+            <option value="Monitor">Monitor</option>
+            <option value="Teclado">Teclado</option>
+            <option value="Mouse">Mouse</option>
+            <option value="Impresora">Impresora</option>
+            <option value="Otro">Otro</option>
+        </select>
+        <input type="text" id="marca" placeholder="Marca">
+        <input type="text" id="modelo" placeholder="Modelo">
+        <input type="text" id="numero_serie" placeholder="Número de serie">
+        <select id="estado">
+            <option value="activo">Activo</option>
+            <option value="en_reparacion">En reparación</option>
+            <option value="de_baja">De baja</option>
+        </select>
+        <input type="text" id="ubicacion" placeholder="Ubicación">
+        <input type="text" id="descripcion" placeholder="Descripción (opcional)">
+        <input type="number" id="cantidad" placeholder="Cantidad" min="1" value="1">
         <p id="errorInventario" style="color:red;"></p>
-        <button onclick="agregarProducto()">Agregar producto</button>
-        <button onclick="mostrarSistema()">Volver al sistema</button>
+        <button onclick="guardarProducto()" id="btnGuardarInventario">Agregar equipo</button>
+        <button onclick="cancelarEdicion()" id="btnCancelarEdicion" style="display:none; background:#888;">Cancelar edición</button>
+    </div>
+
+    <!-- Tabla de inventario -->
+    <div class="section-container" style="margin: 20px auto; max-width: 1200px;">
+        <h1 style="margin-bottom: 15px;">Inventario de Equipos</h1>
+        <div style="overflow-x: auto;">
+            <table class="tabla-datos" id="tablaInventario">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Tipo</th>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>N° Serie</th>
+                        <th>Estado</th>
+                        <th>Ubicación</th>
+                        <th>Cant.</th>
+                        <th id="colAcciones" style="display:none;">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="bodyInventario">
+                    <tr><td colspan="10">Cargando...</td></tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 </html>

@@ -13,15 +13,37 @@
     <script src="tema.js" defer></script>
 </head>
 <body>
-    <!-- PÁGINA DEL SISTEMA -->
     <button class="dark-btn" onclick="toggleDark()">◑</button>
+    <button class="back-btn" onclick="mostrarPrincipal()">←</button>
 
     <div class="card">
         <h1>Panel del Sistema</h1>
+        <p id="rolInfo" style="font-size:14px; color:#666;"></p>
         <button onclick="mostrarInventario()">Inventario</button>
         <button onclick="mostrarIncidencias()">Incidencias</button>
-        <button onclick="mostrarServicio()">Solicitud de servicio</button>
+        <button id="btnSolicitudes" onclick="mostrarServicio()" style="display:none;">Solicitud de servicio</button>
+        <button id="btnAdminUsuarios" onclick="mostrarAdminUsuarios()" style="display:none;">Gestionar Usuarios</button>
         <button onclick="logout()">Cerrar sesión</button>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const usuario = await verificarSesion();
+            if (!usuario) return;
+
+            document.getElementById('rolInfo').textContent =
+                `Sesión: ${usuario.nombre} (${usuario.rol})`;
+
+            // Solicitudes: admin y solicitante pueden crear; tecnico puede ver asignadas
+            if (['admin', 'solicitante', 'tecnico'].includes(usuario.rol)) {
+                document.getElementById('btnSolicitudes').style.display = 'block';
+            }
+
+            // Admin users panel
+            if (usuario.rol === 'admin') {
+                document.getElementById('btnAdminUsuarios').style.display = 'block';
+            }
+        });
+    </script>
 </body>
 </html>

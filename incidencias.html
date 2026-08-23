@@ -14,17 +14,48 @@
     <script src="tema.js" defer></script>
 </head>
 <body>
-    <!-- PÁGINA DE INCIDENCIAS -->
     <button class="dark-btn" onclick="toggleDark()">◑</button>
+    <button class="back-btn" onclick="mostrarSistema()">←</button>
 
-    <div class="card">
-        <h1>Registro de Incidencias</h1>
+    <!-- Formulario para crear incidencia -->
+    <div class="card" style="max-width:500px;">
+        <h1>Registrar Incidencia</h1>
         <input type="text" id="titulo" placeholder="Título de la incidencia" required>
         <input type="text" id="descripcionIncidencia" placeholder="Descripción del problema" required>
         <input type="text" id="area" placeholder="Área o departamento" required>
+        <select id="prioridadIncidencia">
+            <option value="media">Prioridad: Media</option>
+            <option value="alta">Prioridad: Alta</option>
+            <option value="baja">Prioridad: Baja</option>
+        </select>
         <p id="errorIncidencia" style="color:red;"></p>
         <button onclick="guardarIncidencia()">Guardar incidencia</button>
-        <button onclick="mostrarSistema()">Volver al sistema</button>
+    </div>
+
+    <!-- Tabla de incidencias -->
+    <div class="section-container" style="margin: 20px auto; max-width: 1200px;">
+        <h1 style="margin-bottom: 15px;">Incidencias Registradas</h1>
+        <div style="overflow-x: auto;">
+            <table class="tabla-datos" id="tablaIncidencias">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                        <th>Descripción</th>
+                        <th>Área</th>
+                        <th>Prioridad</th>
+                        <th>Estado</th>
+                        <th>Reportado por</th>
+                        <th>Asignado a</th>
+                        <th>Fecha</th>
+                        <th id="colAccionesInc" style="display:none;">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="bodyIncidencias">
+                    <tr><td colspan="10">Cargando...</td></tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 </html>

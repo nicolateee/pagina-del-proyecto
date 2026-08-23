@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios | SGRSI</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="tema.css">
+    <link rel="stylesheet" href="componentes.css">
+    <link rel="stylesheet" href="layout.css">
+    <script src="navegacion.js" defer></script>
+    <script src="autenticacion.js" defer></script>
+    <script src="admin_usuarios.js" defer></script>
+    <script src="tema.js" defer></script>
+</head>
+<body>
+    <button class="dark-btn" onclick="toggleDark()">◑</button>
+    <button class="back-btn" onclick="mostrarSistema()">←</button>
+
+    <div class="section-container" style="margin: 20px auto; max-width: 1000px;">
+        <h1 style="margin-bottom: 15px;">Gestión de Usuarios</h1>
+        <div style="overflow-x: auto;">
+            <table class="tabla-datos" id="tablaUsuarios">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Rol</th>
+                        <th>Estado</th>
+                        <th>Fecha registro</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="bodyUsuarios">
+                    <tr><td colspan="7">Cargando...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

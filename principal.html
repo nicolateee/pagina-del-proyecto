@@ -9,29 +9,32 @@
     <link rel="stylesheet" href="componentes.css">
     <link rel="stylesheet" href="layout.css">
     <script src="navegacion.js" defer></script>
+    <script src="autenticacion.js" defer></script>
     <script src="tema.js" defer></script>
 </head>
 <body>
-    <!-- PÁGINA PRINCIPAL -->
     <button class="dark-btn" onclick="toggleDark()">◑</button>
 
     <header>
         <h1>SGRSI | ITI</h1>
+        <p id="infoUsuario"></p>
     </header>
     <div class="layout">
         <nav>
             <ul>
                 <li><a onclick="mostrarSistema()">Panel de Control</a></li>
+                <li id="navAdminUsuarios" style="display:none;"><a onclick="mostrarAdminUsuarios()">Gestión de Usuarios</a></li>
+                <li><a onclick="logout()">Cerrar Sesión</a></li>
             </ul>
         </nav>
         <div class="boxes">
             <main>
                 <h2>Bienvenido</h2>
-                <p>Sistema de gestión integrado con todas las funcionalidades.</p>
+                <p id="mensajeBienvenida">Sistema de gestión integrado con todas las funcionalidades.</p>
             </main>
             <section>
                 <h2>Gestión de Inventario</h2>
-                <p>Administra los productos y existencias del sistema.</p>
+                <p>Administra los equipos y periféricos del sistema.</p>
             </section>
             <article>
                 <h2>Reportes</h2>
@@ -42,5 +45,22 @@
     <footer>
         <p>&copy; 2026 SGRSI | ITI. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const usuario = await verificarSesion();
+            if (!usuario) return;
+
+            document.getElementById('infoUsuario').textContent =
+                `${usuario.nombre} — Rol: ${usuario.rol.charAt(0).toUpperCase() + usuario.rol.slice(1)}`;
+            document.getElementById('mensajeBienvenida').textContent =
+                `Bienvenido, ${usuario.nombre}. Tu rol es: ${usuario.rol}.`;
+
+            // Show admin-only nav items
+            if (usuario.rol === 'admin') {
+                document.getElementById('navAdminUsuarios').style.display = 'block';
+            }
+        });
+    </script>
 </body>
 </html>

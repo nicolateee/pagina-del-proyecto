@@ -14,10 +14,11 @@
     <script src="tema.js" defer></script>
 </head>
 <body>
-    <!-- PÁGINA DE SERVICIO -->
     <button class="dark-btn" onclick="toggleDark()">◑</button>
+    <button class="back-btn" onclick="mostrarSistema()">←</button>
 
-    <div class="card">
+    <!-- Formulario (only admin and solicitante) -->
+    <div id="formSolicitud" class="card" style="display:none; max-width:500px;">
         <h1>Solicitud de Servicio</h1>
         <input type="text" id="tipoServicio" placeholder="Tipo de servicio" required>
         <input type="text" id="descripcionServicio" placeholder="Descripción del servicio" required>
@@ -29,7 +30,31 @@
         </select>
         <p id="errorServicio" style="color:red;"></p>
         <button onclick="enviarSolicitud()">Enviar solicitud</button>
-        <button onclick="mostrarSistema()">Volver al sistema</button>
+    </div>
+
+    <!-- Tabla de solicitudes -->
+    <div class="section-container" style="margin: 20px auto; max-width: 1200px;">
+        <h1 style="margin-bottom: 15px;">Solicitudes de Servicio</h1>
+        <div style="overflow-x: auto;">
+            <table class="tabla-datos" id="tablaSolicitudes">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tipo</th>
+                        <th>Descripción</th>
+                        <th>Prioridad</th>
+                        <th>Estado</th>
+                        <th>Solicitante</th>
+                        <th>Técnico</th>
+                        <th>Fecha</th>
+                        <th id="colAccionesSol" style="display:none;">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="bodySolicitudes">
+                    <tr><td colspan="9">Cargando...</td></tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 </html>

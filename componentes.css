@@ -31,3 +31,100 @@
 .login-container {
     display: block;
 }
+
+/* =====================
+   ESTILOS DE TABLAS
+   ===================== */
+.tabla-datos {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tabla-datos th {
+    background: #333;
+    color: white;
+    padding: 12px 10px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.tabla-datos td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+}
+
+.tabla-datos tr:hover {
+    background: #f5f5f5;
+}
+
+.tabla-datos tr:last-child td {
+    border-bottom: none;
+}
+
+/* Dark mode tables */
+body.dark .tabla-datos {
+    background: #1e1e1e;
+}
+
+body.dark .tabla-datos th {
+    background: #333;
+}
+
+body.dark .tabla-datos td {
+    border-bottom-color: #333;
+    color: #ddd;
+}
+
+body.dark .tabla-datos tr:hover {
+    background: #2b2b2b;
+}
+
+/* =====================
+   BADGES DE ESTADO Y PRIORIDAD
+   ===================== */
+.badge {
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.badge-alta { background: #fee2e2; color: #dc2626; }
+.badge-media { background: #fef3c7; color: #d97706; }
+.badge-baja { background: #d1fae5; color: #059669; }
+
+.badge-activo, .badge-abierta, .badge-pendiente { background: #dbeafe; color: #2563eb; }
+.badge-en_reparacion, .badge-en_proceso { background: #fef3c7; color: #d97706; }
+.badge-de_baja, .badge-cerrada, .badge-rechazada { background: #fee2e2; color: #dc2626; }
+.badge-resuelta, .badge-completada { background: #d1fae5; color: #059669; }
+
+/* =====================
+   SELECT STYLES
+   ===================== */
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: Arial, sans-serif;
+    background: white;
+}
+
+body.dark select {
+    background: #2b2b2b;
+    color: white;
+    border: 1px solid #555;
+}
+
+@media (max-width: 600px) {
+    .card {
+        width: 100%;
+    }
+}
