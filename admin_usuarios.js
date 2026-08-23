@@ -19,8 +19,8 @@ async function cargarUsuarios() {
             tbody.innerHTML = data.data.map(u => `
                 <tr>
                     <td>${u.id}</td>
-                    <td>${escapeHtml(u.nombre) || '-'}</td>
-                    <td>${escapeHtml(u.correo)}</td>
+                    <td>${u.nombre || '-'}</td>
+                    <td>${u.correo || '-'}</td>
                     <td>
                         <select onchange="cambiarRol(${u.id}, this.value)" style="width:auto;padding:5px;font-size:12px;">
                             <option value="usuario" ${u.rol === 'usuario' ? 'selected' : ''}>Usuario</option>
