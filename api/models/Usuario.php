@@ -1,9 +1,7 @@
 <?php
 declare(strict_types=1);
 
-// ============================================================
-//  CAPA DE NEGOCIO / DATOS: Usuario
-// ============================================================
+
 class Usuario
 {
     private PDO $db;
