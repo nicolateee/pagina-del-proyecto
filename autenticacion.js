@@ -27,26 +27,46 @@ async function login() {
     }
 
     try {
-        const formData = new FormData();
-        formData.append('correo', correo);
-        formData.append('clave', clave);
+    const formData = new FormData();
+    formData.append('correo', correo);
+    formData.append('clave', clave);
 
-        const resp = await fetch('api/auth.php?accion=login', {
-            method: 'POST',
-            body: formData
-        });
-        const data = await resp.json();
+    const resp = await fetch('api/auth.php?accion=login', {
+        method: 'POST',
+        body: formData
+    });
 
-        if (data.status === 'exito') {
-            // Guardar datos del usuario en sessionStorage para uso en frontend
-            sessionStorage.setItem('usuario', JSON.stringify(data.data));
-            window.location.href = 'principal.html';
-        } else {
-            mostrarError("errorLogin", data.message || "Error al iniciar sesión");
-        }
-    } catch (err) {
-        mostrarError("errorLogin", "Error de conexión con el servidor");
+    // Ver qué está devolviendo realmente PHP
+    const texto = await resp.text();
+
+    console.log("HTTP status:", resp.status);
+    console.log("Respuesta del servidor:", texto);
+
+    let data;
+
+    try {
+        data = JSON.parse(texto);
+    } catch (e) {
+        console.error("La respuesta NO es JSON válido:", texto);
+        mostrarError("errorLogin", "El servidor no devolvió un JSON válido.");
+        return;
     }
+
+    if (data.status === 'exito') {
+        sessionStorage.setItem('usuario', JSON.stringify(data.data));
+        window.location.href = 'principal.html';
+    } else {
+        mostrarError(
+            "errorLogin",
+            data.message || "Error al iniciar sesión"
+        );
+    }
+
+} catch (err) {
+    console.error("Error en fetch:", err);
+    mostrarError("errorLogin", "Error de conexión con el servidor");
+}
+
 }
 
 // Registro con fetch  
