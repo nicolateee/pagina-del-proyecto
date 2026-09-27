@@ -34,7 +34,10 @@ class Database
             try {
                 self::$conexion = new PDO($dsn, $user, $pass, $opciones);
             } catch (PDOException $e) {
-                responder('error', 'Error de conexión a la base de datos', null, 500);
+                // responder() llama exit(), pero lo re-lanzamos también
+                // para evitar que PHP intente continuar con $conexion = null
+                responder('error', 'Error de conexión a la base de datos: ' . $e->getMessage(), null, 500);
+                exit; // seguridad extra
             }
         }
         return self::$conexion;
