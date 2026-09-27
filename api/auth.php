@@ -18,6 +18,7 @@ switch ($accion) {
         }
 
         $u = $usuarioModel->verificarCredenciales($correo, $clave);
+        echo "usuario ".$u;
         if (!$u) {
             responder('error', 'Credenciales inválidas o usuario inactivo', null, 401);
         }
